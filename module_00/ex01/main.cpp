@@ -2,6 +2,36 @@
 #include <string>
 #include "PhoneBook.hpp"
 
+PhoneBook   newContact()
+{
+    std::string     contact[11];
+
+    std::cout << "First name: ";
+    getline(std::cin, contact[0]);
+    std::cout << "Last name: ";
+    getline(std::cin, contact[1]);
+    std::cout << "Nickname: ";
+    getline(std::cin, contact[2]);
+    std::cout << "Login: ";
+    getline(std::cin, contact[3]);
+    std::cout << "Postal adress: ";
+    getline(std::cin, contact[4]);
+    std::cout << "Email adress: ";
+    getline(std::cin, contact[5]);
+    std::cout << "Phone numer: ";
+    getline(std::cin, contact[6]);
+    std::cout << "Birthday date: ";
+    getline(std::cin, contact[7]);
+    std::cout << "Favorite meal: ";
+    getline(std::cin, contact[8]);
+    std::cout << "Underwear color: ";
+    getline(std::cin, contact[9]);
+    std::cout << "Darkest secret: ";
+    getline(std::cin, contact[10]);
+    PhoneBook addedContact(contact[0], contact[1], contact[2],contact[3],contact[4],contact[5],contact[6],contact[7],contact[8],contact[9],contact[10]);
+    return (addedContact);
+}
+
 int     main(void)
 {
     bool            exit(false);
@@ -12,11 +42,18 @@ int     main(void)
     std::cout << "Welcome to My awesome phonebook !" << std::endl;
     while (!exit)
     {
-        std::cout << "Enter your command : " << std::endl;
+        std::cout << "Enter your command: ";
         getline(std::cin, command);
         if (command == "ADD")
         {
-            // add new contact
+            if (lastContact > 8)
+                std::cout << "Your phonebook is full can't add a new contact.";
+            else
+            {
+                std::cout << "Enter the new contact info : " << std::endl;
+                phonebook[lastContact] = newContact();
+                lastContact++;
+            }
         }
         else if (command == "SEARCH")
         {

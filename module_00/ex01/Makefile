@@ -4,7 +4,7 @@ CC = clang++
 
 CFLAGS = -Wall -Wextra -Werror
 
-CPP = main
+CPP = main PhoneBook
 
 SRC = $(addsuffix .cpp, $(addprefix ./, $(CPP)))
 
