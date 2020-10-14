@@ -1,10 +1,13 @@
 #include <iostream>
 #include <string>
+#include "PhoneBook.hpp"
 
 int     main(void)
 {
-    bool        exit(false);
-    std::string  command;
+    bool            exit(false);
+    std::string     command;
+    PhoneBook       phonebook[8];
+    int             lastContact(0);
 
     std::cout << "Welcome to My awesome phonebook !" << std::endl;
     while (!exit)
