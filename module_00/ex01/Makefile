@@ -1,12 +1,12 @@
-NAME = megaphone
+NAME = MyAwesomePhoneBook
 
 CC = clang++
 
 CFLAGS = -Wall -Wextra -Werror
 
-MEGAPHONE = megaphone
+CPP = main
 
-SRC = $(addsuffix .cpp, $(addprefix ./, $(MEGAPHONE)))
+SRC = $(addsuffix .cpp, $(addprefix ./, $(CPP)))
 
 OBJ = $(SRC:.cpp=.o)
 
