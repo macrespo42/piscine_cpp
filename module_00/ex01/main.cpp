@@ -32,12 +32,43 @@ PhoneBook   newContact()
     return (addedContact);
 }
 
+std::string    truncate(std::string str)
+{
+    std::string     blank("");
+    int             toFill(0);
+    if (str.length() < 10)
+    {
+        toFill = str.length();
+        while (toFill++ < 10)
+            blank += " ";
+        std::cout << blank;
+    }
+    else
+    {
+        str.resize(9);
+        str += '.';
+    }
+    return str;
+}
+
+void    print_contacts(PhoneBook const contacts[8], int const size)
+{
+    for (int i(0); i < size; i++)
+    {
+        std::cout << size << "|";
+        std::cout << truncate(contacts[i].getFirstName()) << "|";
+        std::cout << truncate(contacts[i].getLastName()) << "|";
+        std::cout << truncate(contacts[i].getNickname()) << std::endl;
+    }
+}
+
 int     main(void)
 {
     bool            exit(false);
     std::string     command;
     PhoneBook       phonebook[8];
     int             lastContact(0);
+    int             index(0);
 
     std::cout << "Welcome to My awesome phonebook !" << std::endl;
     while (!exit)
@@ -57,7 +88,14 @@ int     main(void)
         }
         else if (command == "SEARCH")
         {
-            // search and print a contact if it exist
+            print_contacts(phonebook, lastContact);
+            std::cout << "Type the index of the contact you want to show: ";
+            std::cin >> index;
+            if (index <= lastContact)
+                phonebook[index].printAttributes();
+            else
+                std::cout << "Bad index... no contact founded" << std::endl;
+            std::cin.ignore();
         }
         else if (command == "EXIT")
             exit = true;

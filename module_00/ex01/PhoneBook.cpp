@@ -12,3 +12,32 @@ PhoneBook::PhoneBook(std::string const firstName, std::string const lastName, st
 {
 
 }
+
+void    PhoneBook::printAttributes(void) const {
+    std::cout << "First name: " << this->_firstName << std::endl;
+    std::cout << "Last name: " << this->_lastName << std::endl;
+    std::cout << "Nickname: " << this->_nickname << std::endl;
+    std::cout << "Login: " << this->_login << std::endl;
+    std::cout << "Postal adress: " << this->_postalAdress << std::endl;
+    std::cout << "Email adress: " << this->_emailAdress << std::endl;
+    std::cout << "Phone number: " << this->_phoneNumber << std::endl;
+    std::cout << "Birthday: " << this->_birthday << std::endl;
+    std::cout << "Favorite meal: " << this->_favoriteMeal << std::endl;
+    std::cout << "Uderwear color: " << this->_underwearColor << std::endl;
+    std::cout << "Darkest secret: " << this->_darkestSecret << std::endl;
+}
+
+std::string    PhoneBook::getFirstName(void) const
+{
+    return this->_firstName;
+}
+
+std::string    PhoneBook::getLastName(void) const
+{
+    return this->_lastName;
+}
+
+std::string    PhoneBook::getNickname(void) const
+{
+    return this->_nickname;
+}
