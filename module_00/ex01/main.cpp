@@ -55,7 +55,7 @@ void    print_contacts(PhoneBook const contacts[8], int const size)
 {
     for (int i(0); i < size; i++)
     {
-        std::cout << size << "|";
+        std::cout << i << "|";
         std::cout << truncate(contacts[i].getFirstName()) << "|";
         std::cout << truncate(contacts[i].getLastName()) << "|";
         std::cout << truncate(contacts[i].getNickname()) << std::endl;
@@ -71,13 +71,13 @@ int     main(void)
     int             index(0);
 
     std::cout << "Welcome to My awesome phonebook !" << std::endl;
-    while (!exit)
+    while (exit == false)
     {
         std::cout << "Enter your command: ";
         getline(std::cin, command);
         if (command == "ADD")
         {
-            if (lastContact > 8)
+            if (lastContact >= 8)
                 std::cout << "Your phonebook is full can't add a new contact.";
             else
             {
@@ -91,11 +91,11 @@ int     main(void)
             print_contacts(phonebook, lastContact);
             std::cout << "Type the index of the contact you want to show: ";
             std::cin >> index;
+            std::cin.ignore();
             if (index <= lastContact)
                 phonebook[index].printAttributes();
             else
                 std::cout << "Bad index... no contact founded" << std::endl;
-            std::cin.ignore();
         }
         else if (command == "EXIT")
             exit = true;
