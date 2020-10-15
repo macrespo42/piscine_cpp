@@ -9,21 +9,23 @@ class PhoneBook
     public:
 
     PhoneBook();
-    PhoneBook(std::string firstName, std::string lastName, std::string nickname, std::string login, std::string postalAdress, std::string emailAdress, std::string phoneNumber, std::string birthday, std::string favoriteMeal, std::string underwearColor, std::string darkestSecret);
+    PhoneBook(std::string const firstName, std::string const lastName, std::string const nickname, std::string const login, std::string const postalAdress,
+     std::string const emailAdress, std::string const phoneNumber, std::string const birthday, std::string const favoriteMeal,
+     std::string const underwearColor, std::string const darkestSecret);
 
     private:
 
-    std::string     m_firstName;
-    std::string     m_lastName;
-    std::string     m_nickname;
-    std::string     m_login;
-    std::string     m_postalAdress;
-    std::string     m_emailAdress;
-    std::string     m_phoneNumber;
-    std::string     m_birthday;
-    std::string     m_favoriteMeal;
-    std::string     m_underwearColor;
-    std::string     m_darkestSecret;
+    std::string const     _firstName;
+    std::string const     _lastName;
+    std::string const     _nickname;
+    std::string const     _login;
+    std::string const     _postalAdress;
+    std::string const     _emailAdress;
+    std::string const     _phoneNumber;
+    std::string const     _birthday;
+    std::string const     _favoriteMeal;
+    std::string const     _underwearColor;
+    std::string const     _darkestSecret;
 };
 
 #endif
