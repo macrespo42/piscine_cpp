@@ -5,6 +5,11 @@ Zombie::Zombie(std::string const name, std::string const type) : _name(name), _t
     std::cout << this->_name << " are alive !" << std::endl;
 }
 
+Zombie::~Zombie()
+{
+    std::cout << this->_name << " is dead now" << std::endl;
+}
+
 void    Zombie::advert(void) const
 {
     std::cout << "< " << this->_name << " (" << this->_type << ")> Braiiiiiiiiiiiiiins ..." << std::endl;
