@@ -6,3 +6,9 @@ void memoryLeak()
     std::cout << *panthere << std::endl;
     delete panthere;
 }
+
+int     main(void)
+{
+    memoryLeak();
+    return 0;
+}
