@@ -4,7 +4,7 @@ CC = clang++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-CPP = main
+CPP = replace
 
 SRC = $(addsuffix .cpp, $(addprefix ./, $(CPP)))
 
