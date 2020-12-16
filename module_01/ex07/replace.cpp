@@ -25,7 +25,6 @@ int     count_line(char *fileName) {
 }
 
 int     main(int ac, char **av) {
-    (void)av;
     if (ac == 4) {
         std::stringstream fileName;
         fileName << av[1];
