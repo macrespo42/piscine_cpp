@@ -1,12 +1,14 @@
 #ifndef FIXED
 #define FIXED
 
+#include<iostream>
+
 class Fixed {
 
     public:
 
     Fixed();
-    Fixed(Fixed & const src);
+    Fixed(Fixed const & src);
     ~Fixed();
 
     int getRawBits(void) const;
