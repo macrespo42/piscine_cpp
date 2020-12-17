@@ -17,9 +17,8 @@ class Fixed {
 
     private:
 
-    int       _fixValue;
-    int const _static;
-
+    int              _fixValue;
+    static int const _bits = 8;
 };
 
 #endif

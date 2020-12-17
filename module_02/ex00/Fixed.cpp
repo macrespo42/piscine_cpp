@@ -1,13 +1,14 @@
 #include "Fixed.hpp"
 
-Fixed::Fixed() : _fixValue(0), _static(8)
+Fixed::Fixed() : _fixValue(0)
 {
     std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(Fixed const & src) : _fixValue(src._fixValue), _static(src._static)
+Fixed::Fixed(Fixed const & src)
 {
     std::cout << "Copy constructor called" << std::endl;
+    *this = src;
 }
 
 Fixed::~Fixed() {
