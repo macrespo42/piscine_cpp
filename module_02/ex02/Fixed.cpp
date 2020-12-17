@@ -118,3 +118,29 @@ const Fixed & max(Fixed const& fixed1, Fixed const& fixed2) {
     else
         return fixed2;
 }
+
+Fixed & Fixed::operator++(void)
+{
+    this->_fixValue++;
+    return *this;
+}
+
+Fixed Fixed::operator++(int) {
+    Fixed incremented(this->_fixValue);
+
+    this->_fixValue++;
+    return incremented;
+}
+
+Fixed & Fixed::operator--(void)
+{
+    this->_fixValue--;
+    return *this;
+}
+
+Fixed Fixed::operator--(int) {
+    Fixed incremented(this->_fixValue);
+
+    this->_fixValue--;
+    return incremented;
+}
