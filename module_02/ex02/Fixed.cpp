@@ -70,3 +70,23 @@ bool Fixed::operator==(Fixed const& fixed) const {
 bool Fixed::operator!=(Fixed const& fixed) const {
     return (this->_fixValue != fixed.getRawBits());
 }
+
+Fixed Fixed::operator+(Fixed const &src) {
+    Fixed result(this->_fixValue + src.getRawBits());
+    return result;
+}
+
+Fixed Fixed::operator-(Fixed const &src) {
+    Fixed result(this->_fixValue - src.getRawBits());
+    return result;
+}
+
+Fixed Fixed::operator*(Fixed const &src) {
+    Fixed result(this->_fixValue * src.getRawBits() / 256);
+    return result;
+}
+
+Fixed Fixed::operator/(Fixed const &src) {
+    Fixed result(this->_fixValue * 256 / src.getRawBits());
+    return result;
+}
