@@ -31,6 +31,11 @@ class Fixed {
     Fixed operator*(Fixed const& fixed);
     Fixed operator/(Fixed const& fixed);
 
+    static Fixed & min(Fixed & fixed1, Fixed & fixed2);
+    static const Fixed & min(Fixed const& fixed1, Fixed const& fixed2);
+    static Fixed & max(Fixed & fixed1, Fixed & fixed2);
+    static const Fixed & max(Fixed const& fixed1, Fixed const& fixed2);
+    
     private:
 
     int              _fixValue;

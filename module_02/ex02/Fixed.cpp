@@ -90,3 +90,31 @@ Fixed Fixed::operator/(Fixed const &src) {
     Fixed result(this->_fixValue * 256 / src.getRawBits());
     return result;
 }
+
+Fixed & min(Fixed & fixed1, Fixed & fixed2) {
+    if (fixed1.getRawBits() < fixed2.getRawBits())
+        return fixed1;
+    else
+        return fixed2;
+}
+
+const Fixed & min(Fixed const& fixed1, Fixed const& fixed2) {
+    if (fixed1.getRawBits() < fixed2.getRawBits())
+        return fixed1;
+    else
+        return fixed2;
+}
+
+Fixed & max(Fixed & fixed1, Fixed & fixed2)  {
+    if (fixed1.getRawBits() > fixed2.getRawBits())
+        return fixed1;
+    else
+        return fixed2;
+
+}
+const Fixed & max(Fixed const& fixed1, Fixed const& fixed2) {
+    if (fixed1.getRawBits() > fixed2.getRawBits())
+        return fixed1;
+    else
+        return fixed2;
+}
