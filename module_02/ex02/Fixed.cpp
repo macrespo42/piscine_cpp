@@ -47,26 +47,26 @@ std::ostream& operator<<(std::ostream &out, Fixed const& fixed) {
     return out;
 }
 
-bool operator>(Fixed const& fixed1, Fixed const& fixed2) {
-    return (fixed1.getRawBits() > fixed2.getRawBits());
+bool Fixed::operator>(Fixed const& fixed) const {
+    return (this->_fixValue > fixed.getRawBits());
 }
 
-bool operator>(Fixed const& fixed1, Fixed const& fixed2) {
-    return (fixed1.getRawBits() < fixed2.getRawBits());
+bool Fixed::operator<(Fixed const& fixed) const {
+    return (this->_fixValue < fixed.getRawBits());
 }
 
-bool operator<=(Fixed const& fixed1, Fixed const& fixed2) {
-    return (fixed1.getRawBits() <= fixed2.getRawBits());
+bool Fixed::operator<=(Fixed const& fixed) const {
+    return (this->_fixValue <= fixed.getRawBits());
 }
 
-bool operator>=(Fixed const& fixed1, Fixed const& fixed2) {
-    return (fixed1.getRawBits() >= fixed2.getRawBits());
+bool Fixed::operator>=(Fixed const& fixed) const {
+    return (this->_fixValue >= fixed.getRawBits());
 }
 
-bool operator==(Fixed const& fixed1, Fixed const& fixed2) {
-    return (fixed1.getRawBits() == fixed2.getRawBits());
+bool Fixed::operator==(Fixed const& fixed) const {
+    return (this->_fixValue == fixed.getRawBits());
 }
 
-bool operator!=(Fixed const& fixed1, Fixed const& fixed2) {
-    return (fixed1.getRawBits() != fixed2.getRawBits());
+bool Fixed::operator!=(Fixed const& fixed) const {
+    return (this->_fixValue != fixed.getRawBits());
 }

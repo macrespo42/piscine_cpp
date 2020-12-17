@@ -19,6 +19,12 @@ class Fixed {
     float toFloat(void) const;
     int toInt(void) const;
     Fixed & operator=(Fixed const & src);
+    bool operator>(Fixed const& fixed1) const;
+    bool operator<(Fixed const& fixed1) const ;
+    bool operator<=(Fixed const& fixed1) const;
+    bool operator>=(Fixed const& fixed1) const;
+    bool operator==(Fixed const& fixed1) const;
+    bool operator!=(Fixed const& fixed1) const;
 
     private:
 
@@ -27,12 +33,5 @@ class Fixed {
 };
 
 std::ostream& operator<<(std::ostream &out, Fixed const& fixed);
-
-bool operator>(Fixed const& fixed1, Fixed const& fixed2);
-bool operator<(Fixed const& fixed1, Fixed const& fixed2);
-bool operator<=(Fixed const& fixed1, Fixed const& fixed2);
-bool operator>=(Fixed const& fixed1, Fixed const& fixed2);
-bool operator==(Fixed const& fixed1, Fixed const& fixed2);
-bool operator!=(Fixed const& fixed1, Fixed const& fixed2);
 
 #endif
