@@ -46,3 +46,27 @@ std::ostream& operator<<(std::ostream &out, Fixed const& fixed) {
     std::cout << fixed.toFloat();
     return out;
 }
+
+bool operator>(Fixed const& fixed1, Fixed const& fixed2) {
+    return (fixed1.getRawBits() > fixed2.getRawBits());
+}
+
+bool operator>(Fixed const& fixed1, Fixed const& fixed2) {
+    return (fixed1.getRawBits() < fixed2.getRawBits());
+}
+
+bool operator<=(Fixed const& fixed1, Fixed const& fixed2) {
+    return (fixed1.getRawBits() <= fixed2.getRawBits());
+}
+
+bool operator>=(Fixed const& fixed1, Fixed const& fixed2) {
+    return (fixed1.getRawBits() >= fixed2.getRawBits());
+}
+
+bool operator==(Fixed const& fixed1, Fixed const& fixed2) {
+    return (fixed1.getRawBits() == fixed2.getRawBits());
+}
+
+bool operator!=(Fixed const& fixed1, Fixed const& fixed2) {
+    return (fixed1.getRawBits() != fixed2.getRawBits());
+}

@@ -28,4 +28,11 @@ class Fixed {
 
 std::ostream& operator<<(std::ostream &out, Fixed const& fixed);
 
+bool operator>(Fixed const& fixed1, Fixed const& fixed2);
+bool operator<(Fixed const& fixed1, Fixed const& fixed2);
+bool operator<=(Fixed const& fixed1, Fixed const& fixed2);
+bool operator>=(Fixed const& fixed1, Fixed const& fixed2);
+bool operator==(Fixed const& fixed1, Fixed const& fixed2);
+bool operator!=(Fixed const& fixed1, Fixed const& fixed2);
+
 #endif
