@@ -1,6 +1,6 @@
 #include "Fixed.hpp"
 
-Fixed::Fixed() : _fixValue(0)
+Fixed::Fixed(void) : _fixValue(0)
 {
     std::cout << "Default constructor called" << std::endl;
 }
@@ -11,7 +11,7 @@ Fixed::Fixed(Fixed const & src)
     *this = src;
 }
 
-Fixed::~Fixed() {
+Fixed::~Fixed(void) {
     std::cout << "Destructor called" << std::endl;
 }
 

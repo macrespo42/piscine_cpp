@@ -7,9 +7,9 @@ class Fixed {
 
     public:
 
-    Fixed();
+    Fixed(void);
     Fixed(Fixed const & src);
-    ~Fixed();
+    ~Fixed(void);
 
     int getRawBits(void) const;
     void setRawBits(int const raw);
@@ -18,7 +18,7 @@ class Fixed {
     private:
 
     int              _fixValue;
-    static int const _bits = 8;
+    static int const _bits = 8; // 2ˆ8 to convert (256)
 };
 
 #endif
