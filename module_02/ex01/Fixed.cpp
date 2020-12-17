@@ -35,6 +35,14 @@ void Fixed::setRawBits(int const raw) {
     this->_fixValue = raw;
 }
 
+float Fixed::toFLoat(void) const {
+    return (float)this->_fixValue / 256;
+}
+
+int Fixed::toInt(void) const {
+    return this->_fixValue / 256;
+}
+
 Fixed & Fixed::operator=(Fixed const & src)
 {
     std::cout << "Assignation operator called" << std::endl;
