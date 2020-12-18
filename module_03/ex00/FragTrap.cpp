@@ -3,20 +3,20 @@
 FragTrap::FragTrap() : _hitPoints(100), _maxHitPoints(100), _energyPoints(100), _maxEnergyPoint(100), _level(1), _name("C34A"), _meleeAttackDamages(30), _rangedAttackDamages(20), _armorDamageReduction(5)
 {
     srand(time(0));
-    std::cout << "Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom :" << this->_name <<". Robot d'Hyperion classe C. Veuillez régler les paramètres d'usine en fonction de vos besoin avant déploiement. ";
+    std::cout << "Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name <<". Robot d'Hyperion classe C. Veuillez régler les paramètres d'usine en fonction de vos besoin avant déploiement. " << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : _hitPoints(100), _maxHitPoints(100), _energyPoints(100), _maxEnergyPoint(100), _level(1), _name(name), _meleeAttackDamages(30), _rangedAttackDamages(20), _armorDamageReduction(5)
 {
     srand(time(0));
-    std::cout << "Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom :" << this->_name <<". Robot d'Hyperion classe C. Veuillez régler les paramètres d'usine en fonction de vos besoin avant déploiement. ";
+    std::cout << "Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name <<". Robot d'Hyperion classe C. Veuillez régler les paramètres d'usine en fonction de vos besoin avant déploiement. " << std::endl;
 }
 
 FragTrap::FragTrap(FragTrap const& src)
 {
     srand(time(0));
     *this = src;
-    std::cout << "Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom :" << this->_name <<". Robot d'Hyperion classe C. Veuillez régler les paramètres d'usine en fonction de vos besoin avant déploiement. " << std::endl;
+    std::cout << "Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name <<". Robot d'Hyperion classe C. Veuillez régler les paramètres d'usine en fonction de vos besoin avant déploiement. " << std::endl;
 }
 
 FragTrap::~FragTrap(void) {
@@ -70,5 +70,5 @@ void FragTrap::vaulthunter_dot_exe(std::string const& target) {
     int const attackDamage[5] = {50, 10, 0, 75, 2};
 
     int attackIndex(rand() % 5);
-    std::cout << "FR4G-TP "<< this->_name <<" attaque " << target << " en" << attackNames[attackIndex] << ", causant "<< attackDamage[attackIndex] <<" points de dégâts" << std::endl;
+    std::cout << "FR4G-TP "<< this->_name <<" attaque " << target << " en " << attackNames[attackIndex] << ", causant "<< attackDamage[attackIndex] <<" points de dégâts" << std::endl;
 }
