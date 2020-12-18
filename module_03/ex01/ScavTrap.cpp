@@ -65,8 +65,8 @@ void ScavTrap::beRepaired(unsigned int amount) {
         std::cout << "SC4V-TP " << this->_name << " se soigne, il a maintenant " << this->_hitPoints << " HP" << std::endl;
 }
 
-void ScavTrap::challengeNewcomer(ScavTrap const& target) {
-    std::string const challenges[5] = {"Ce battre contre le covid", "Faire sourrir norminet", "Manger sain pendant 1 semaine", "Appeler son coiffeur", "Ouvrant une porte"};
+void ScavTrap::challengeNewcomer(std::string const& target) {
+    std::string const challenges[5] = {"Ce battre contre le covid", "Faire sourrir norminet", "Manger sain pendant 1 semaine", "Appeler son coiffeur", "Ouvrire une porte"};
 
     if (this->_energyPoints < 25) {
         std::cout << this->_name << " n'a pas assez d'energie pour effectuer une challenge" << std::endl;
