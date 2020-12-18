@@ -10,14 +10,16 @@ class FragTrap {
 
     public:
 
+    FragTrap(void);
     FragTrap(std::string name);
     FragTrap(FragTrap const& src);
     ~FragTrap(void);
+    FragTrap &operator=(FragTrap const& src);
     void rangedAttack(std::string const& target);
     void meleeAttack(std::string const& target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
-    int vaulthunter_dot_exe(std::string const& target);
+    void vaulthunter_dot_exe(std::string const& target);
 
     private:
 
