@@ -69,6 +69,12 @@ void FragTrap::vaulthunter_dot_exe(std::string const& target) {
     std::string const attackNames[5] = {"Lançant son bras droit", "Chantant une berceuse", "Tournant autour de sa cible", "Poussant des cris strident", "Ouvrant une porte"};
     int const attackDamage[5] = {50, 10, 0, 75, 2};
 
+    if (this->_energyPoints < 25) {
+        std::cout << this->_name << " n'a pas assez d'energie pour effectuer une attaque special" << std::endl;
+        return ;
+    }
+    this->_energyPoints -= 25;
+
     int attackIndex(rand() % 5);
     std::cout << "FR4G-TP "<< this->_name <<" attaque " << target << " en " << attackNames[attackIndex] << ", causant "<< attackDamage[attackIndex] <<" points de dégâts" << std::endl;
 }
