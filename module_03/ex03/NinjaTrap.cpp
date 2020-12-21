@@ -34,3 +34,43 @@ NinjaTrap & NinjaTrap::operator=(NinjaTrap const & src)
     this->_armorDamageReduction = src._armorDamageReduction;
     return *this;
 }
+
+void NinjaTrap::ninjaShoebox(ClapTrap const & target) {
+    (void)target;
+    if (this->_energyPoints >= 25) {
+        this->_energyPoints -=25;
+        std::cout << this->_name << " S'attaque à sont maitre, il rate et disparais dans un fumigene..." << std::endl;
+    }
+    else
+        std::cout << this->_name << " N'a pas assez d'energie pour lancer cette attaque...";
+}
+
+void NinjaTrap::ninjaShoebox(NinjaTrap const & target) {
+    (void)target;
+    if (this->_energyPoints >= 25) {
+        this->_energyPoints -=25;
+        std::cout << this->_name << " S'attaque à l'un des sien, ils sont si rapide qu'on ne sais pas qui gagne" << std::endl;
+    }
+    else
+        std::cout << this->_name << " N'a pas assez d'energie pour lancer cette attaque...";
+}
+
+void NinjaTrap::ninjaShoebox(FragTrap const & target) {
+    (void)target;
+    if (this->_energyPoints >= 25) {
+        this->_energyPoints -=25;
+        std::cout << this->_name << " S'attaque à un FragTrap, coup critique ! Il lui a refait une coupe !" << std::endl;
+    }
+    else
+        std::cout << this->_name << " N'a pas assez d'energie pour lancer cette attaque...";
+}
+
+void NinjaTrap::ninjaShoebox(ScavTrap const & target) {
+    (void)target;
+    if (this->_energyPoints >= 25) {
+        this->_energyPoints -=25;
+        std::cout << this->_name << " S'attaque à un ScavTrap, coup critique ! OUAH c'est presque un one shot !" << std::endl;
+    }
+    else
+        std::cout << this->_name << " N'a pas assez d'energie pour lancer cette attaque...";
+}
