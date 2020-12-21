@@ -1,9 +1,8 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
-#include "ClapTrap.hpp"
 
 int main(void) {
-    ClapTrap roberto("Roberto");
+    FragTrap roberto("Roberto");
     // ScavTrap gina("Gina");
 
     roberto.rangedAttack("Crystal");
@@ -21,11 +20,11 @@ int main(void) {
     // gina.beRepaired(42);
     // gina.beRepaired(200);
 
-    // roberto.vaulthunter_dot_exe("ruby");
-    // roberto.vaulthunter_dot_exe("python");
-    // roberto.vaulthunter_dot_exe("php");
-    // roberto.vaulthunter_dot_exe("C");
-    // roberto.vaulthunter_dot_exe("Javascript");
+    roberto.vaulthunter_dot_exe("ruby");
+    roberto.vaulthunter_dot_exe("python");
+    roberto.vaulthunter_dot_exe("php");
+    roberto.vaulthunter_dot_exe("C");
+    roberto.vaulthunter_dot_exe("Javascript");
     
     // gina.challengeNewcomer("ruby");
     // gina.challengeNewcomer("python");

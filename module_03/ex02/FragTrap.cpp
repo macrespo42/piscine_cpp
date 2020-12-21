@@ -1,12 +1,12 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() : _hitPoints(100), _maxHitPoints(100), _energyPoints(100), _maxEnergyPoint(100), _level(1), _name("C34A"), _meleeAttackDamages(30), _rangedAttackDamages(20), _armorDamageReduction(5)
+FragTrap::FragTrap() : ClapTrap(100, 100, 100, 100, 1, "C34A", 30, 20, 5)
 {
     srand(time(0));
     std::cout << "Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name <<". Robot d'Hyperion classe C. Veuillez régler les paramètres d'usine en fonction de vos besoin avant déploiement. " << std::endl;
 }
 
-FragTrap::FragTrap(std::string name) : _hitPoints(100), _maxHitPoints(100), _energyPoints(100), _maxEnergyPoint(100), _level(1), _name(name), _meleeAttackDamages(30), _rangedAttackDamages(20), _armorDamageReduction(5)
+FragTrap::FragTrap(std::string name) : ClapTrap(100, 100, 100, 100, 1, name, 30, 20, 5)
 {
     srand(time(0));
     std::cout << "Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name <<". Robot d'Hyperion classe C. Veuillez régler les paramètres d'usine en fonction de vos besoin avant déploiement. " << std::endl;
@@ -27,7 +27,7 @@ FragTrap & FragTrap::operator=(FragTrap const& src) {
     this->_hitPoints = src._hitPoints;
     this->_maxHitPoints = src._maxHitPoints;
     this->_energyPoints = src._energyPoints;
-    this->_maxEnergyPoint = src._maxEnergyPoint;
+    this->_maxEnergyPoints = src._maxEnergyPoints;
     this->_level = src._level;
     this->_name = src._name;
     this->_meleeAttackDamages = src._meleeAttackDamages;
