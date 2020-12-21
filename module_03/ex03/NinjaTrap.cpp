@@ -10,18 +10,18 @@ NinjaTrap::NinjaTrap(std::string name) : ClapTrap(60, 60, 120, 120, 1, name, 60,
     std::cout << "Bonjour, je suis votre nouveau robot Ninja. Nom : " << this->_name << std::endl;
 }
 
-NinjaTrap(ClapTrap const & src)
+NinjaTrap::NinjaTrap(NinjaTrap const & src)
 {
     std::cout << "Bonjour, je suis votre nouveau robot Ninja. Nom : " << this->_name << std::endl;
     *this = src;
 }
 
-~NinjaTrap(void)
+NinjaTrap::~NinjaTrap(void)
 {
     std::cout << "YAAAAAAAAA le ninja " << this->_name << " Disparais dans l'ombre..." << std::endl;
 }
 
-NinjaTrap &operator=(ScavTrap const & src)
+NinjaTrap & NinjaTrap::operator=(NinjaTrap const & src)
 {
     this->_hitPoints = src._hitPoints;
     this->_maxHitPoints = src._maxHitPoints;

@@ -9,9 +9,9 @@ class NinjaTrap : public ClapTrap {
 
     NinjaTrap(void);
     NinjaTrap(std::string name);
-    NinjaTrap(ClapTrap const & src);
+    NinjaTrap(NinjaTrap const & src);
     ~NinjaTrap(void);
-    NinjaTrap &operator=(ScavTrap const & src);
-}
+    NinjaTrap &operator=(NinjaTrap const & src);
+};
 
 #endif
