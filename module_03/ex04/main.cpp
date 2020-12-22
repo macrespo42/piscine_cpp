@@ -1,19 +1,10 @@
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
-#include "NinjaTrap.hpp"
+#include "SuperTrap.hpp"
 
 int main(void) {
-    NinjaTrap roberto("Roberto");
-    ClapTrap gina("gina");
-    FragTrap fred("fred");
-    ScavTrap vladou("vladou");
+    SuperTrap frank("franky");
+    FragTrap roberto;
 
-    roberto.rangedAttack("truc");
-    roberto.meleeAttack("truc");
-
-    roberto.ninjaShoebox(gina);
-    roberto.ninjaShoebox(roberto);
-    roberto.ninjaShoebox(fred);
-    roberto.ninjaShoebox(vladou);
+    frank.vaulthunter_dot_exe("michel");
+    frank.ninjaShoebox(roberto);
     return 0;
 }
