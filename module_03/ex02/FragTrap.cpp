@@ -49,3 +49,11 @@ void FragTrap::vaulthunter_dot_exe(std::string const& target) {
     int attackIndex(rand() % 5);
     std::cout << "FR4G-TP "<< this->_name <<" attaque " << target << " en " << attackNames[attackIndex] << ", causant "<< attackDamage[attackIndex] <<" points de dégâts" << std::endl;
 }
+
+void FragTrap::rangedAttack(std::string const& target) {
+    std::cout << "FR4G-TP "<< this->_name <<" attaque " << target << " à distance, causant "<< this->_rangedAttackDamages <<" points de dégâts" << std::endl;
+}
+
+void FragTrap::meleeAttack(std::string const& target) {
+    std::cout << "FR4G-TP "<< this->_name <<" attaque " << target << " au corps à corps, causant "<< this->_rangedAttackDamages <<" points de dégâts" << std::endl;
+}

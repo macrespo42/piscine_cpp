@@ -46,3 +46,11 @@ void ScavTrap::challengeNewcomer(void) {
 
     std::cout << "SC4V-TP " << this->_name << "doit : " << challenges[rand() % 5] << std::endl;
 }
+
+void ScavTrap::rangedAttack(std::string const& target) {
+    std::cout << "SC4V-TP "<< this->_name <<" attaque " << target << " à distance, causant "<< this->_rangedAttackDamages <<" points de dégâts" << std::endl;
+}
+
+void ScavTrap::meleeAttack(std::string const& target) {
+    std::cout << "SC4V-TP "<< this->_name <<" attaque " << target << " au corps à corps, causant "<< this->_rangedAttackDamages <<" points de dégâts" << std::endl;
+}
