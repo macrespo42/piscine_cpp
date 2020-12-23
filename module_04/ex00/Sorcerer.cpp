@@ -35,7 +35,7 @@ std::string Sorcerer::getTitle(void) const {
 
 std::ostream &operator<<(std::ostream &os, Sorcerer const& wizard)
 {
-    os << "I am " << wizard.getName() << ", " << wizard.getTitle() << ", and i like ponies!";
+    os << "I am " << wizard.getName() << ", " << wizard.getTitle() << ", and i like ponies!" << std::endl;
     return os;
 }
 

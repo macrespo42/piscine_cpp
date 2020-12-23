@@ -13,7 +13,7 @@ class Victim {
     ~Victim(void);
     Victim & operator=(Victim const& src);
     std::string getName(void) const;
-    void getPolymorphed(void) const;
+    virtual void getPolymorphed(void) const;
 
     protected:
 
