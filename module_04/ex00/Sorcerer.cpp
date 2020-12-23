@@ -38,3 +38,7 @@ std::ostream &operator<<(std::ostream &os, Sorcerer const& wizard)
     os << "I am " << wizard.getName() << ", " << wizard.getTitle() << ", and i like ponies!";
     return os;
 }
+
+void Sorcerer::polymorph(Victim const & victim) {
+    victim.getPolymorphed();
+}
