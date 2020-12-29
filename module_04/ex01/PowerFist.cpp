@@ -5,9 +5,9 @@ PowerFist::PowerFist(void) : AWeapon("PowerFist", 8, 50)
 
 }
 
-PowerFist::PowerFist(PowerFist const& src)
+PowerFist::PowerFist(PowerFist const& src) : AWeapon(src)
 {
-    *this = src;
+
 }
 
 PowerFist::~PowerFist(void)

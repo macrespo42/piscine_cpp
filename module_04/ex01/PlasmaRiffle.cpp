@@ -5,9 +5,9 @@ PlasmaRiffle::PlasmaRiffle(void) : AWeapon("Plama Riffle", 5, 21)
 
 }
 
-PlasmaRiffle::PlasmaRiffle(PlasmaRiffle const& src)
+PlasmaRiffle::PlasmaRiffle(PlasmaRiffle const& src) : AWeapon(src)
 {
-    *this = src;
+
 }
 
 PlasmaRiffle::~PlasmaRiffle(void)
