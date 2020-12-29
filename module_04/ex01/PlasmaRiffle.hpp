@@ -12,13 +12,6 @@ class PlasmaRiffle : public AWeapon {
     ~PlasmaRiffle(void);
     PlasmaRiffle & operator=(PlasmaRiffle const& src);
     void attack(void) const;
-
-    protected:
-
-    std::string _name;
-    int _apCost;
-    int _damage;
-
 };
 
 #endif
