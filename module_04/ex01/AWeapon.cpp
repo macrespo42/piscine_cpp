@@ -1,10 +1,5 @@
 #include "AWeapon.hpp"
 
-AWeapon::AWeapon(void) : _name("fist"), _apCost(0), _damage(2)
-{
-    std::cout << this->_name << " are created !" << std::endl;
-}
-
 AWeapon::AWeapon(std::string name, int apCost, int damage) : _name(name), _apCost(apCost), _damage(damage)
 {
     std::cout << this->_name << " are created !" << std::endl;
