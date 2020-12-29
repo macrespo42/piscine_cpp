@@ -11,7 +11,7 @@ class AWeapon {
     AWeapon(void);
     AWeapon(std::string name, int apCost, int damage);
     AWeapon(AWeapon const& src);
-    ~AWeapon(void);
+    virtual ~AWeapon(void);
     AWeapon & operator=(AWeapon const& src);
     std::string getName(void) const;
     int getapCost(void) const;
