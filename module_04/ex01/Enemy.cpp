@@ -41,6 +41,6 @@ void Enemy::takeDamage(int damages)
 {
     if (damages > 0) {
         this->_hp -= damages;
-        std::cout << this->_type << " take" << damages << " damages now he have " << this->_hp << " hp" << std::endl;
+        std::cout << this->_type << " take " << damages << " damages, now he have " << this->_hp << " hp" << std::endl;
     }
 }
