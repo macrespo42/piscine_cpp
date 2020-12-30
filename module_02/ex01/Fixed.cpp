@@ -51,6 +51,6 @@ Fixed & Fixed::operator=(Fixed const & src)
 }
 
 std::ostream& operator<<(std::ostream &out, Fixed const& fixed) {
-    std::cout << fixed.toFloat();
+    out << fixed.toFloat();
     return out;
 }
