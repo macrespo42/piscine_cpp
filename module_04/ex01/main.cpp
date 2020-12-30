@@ -2,19 +2,31 @@
 #include "PowerFist.hpp"
 #include "Enemy.hpp"
 #include "SuperMutant.hpp"
+#include "RadScorpion.hpp"
+#include "Character.hpp"
 
 int main(void) {
 
-    PlasmaRiffle blaster;
-    PowerFist fist;
+    Character *me = new Character("Max");
+    Enemy *b = new RadScorpion();
 
-    blaster.attack();
-    fist.attack();
-    std::cout << blaster.getName() << " make " << blaster.getDamage() << " damages and cost " << blaster.getapCost() << " ap" << std::endl; 
-    std::cout << fist.getName() << " make " << fist.getDamage() << " damages and cost " << fist.getapCost() << " ap" << std::endl;
+    std::cout << me << std::endl;
 
-    SuperMutant br;
+    AWeapon *pr = new PlasmaRiffle();
 
-    br.takeDamage(30);
+    std::cout << me << std::endl;
+
+    AWeapon *pf = new PowerFist();
+
+    std::cout << me << std::endl;
+
+    me->equip(pr);
+    me->attack(b);
+    me->equip(pf);
+
+    delete me;
+    delete b;
+    delete pr;
+    delete pf;
     return 0;
 }
