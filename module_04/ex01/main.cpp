@@ -9,24 +9,29 @@ int main(void) {
 
     Character *me = new Character("Max");
     Enemy *b = new RadScorpion();
-
-    std::cout << me << std::endl;
-
+    std::cout << *me;
     AWeapon *pr = new PlasmaRiffle();
-
-    std::cout << me << std::endl;
-
     AWeapon *pf = new PowerFist();
-
-    std::cout << me << std::endl;
-
     me->equip(pr);
+    std::cout << *me;
+    me->attack(b);
+    me->attack(b);
     me->attack(b);
     me->equip(pf);
-
-    delete me;
-    delete b;
-    delete pr;
-    delete pf;
+    me->attack(b);
+    me->recoverAP();
+    Enemy *c = new SuperMutant();
+    me->attack(c);
+    me->attack(c);
+    me->attack(c);
+    me->attack(c);
+    me->attack(c);
+    me->recoverAP();
+    me->attack(c);
+    me->attack(c);
+    me->attack(c);
+    me->attack(c);
+    me->attack(c);
+    std::cout << *me;
     return 0;
 }

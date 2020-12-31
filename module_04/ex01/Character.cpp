@@ -28,6 +28,7 @@ void Character::recoverAP(void)
     this->_ap += 10;
     if (this->_ap > 40)
         this->_ap = 40;
+    std::cout << this->_name << " recover ap now he have : " << this->_ap << std::endl;
 }
     
 void Character::equip(AWeapon *weapon)
@@ -41,10 +42,13 @@ void Character::attack(Enemy *enemy)
         std::cout << this->_name << " attack " << enemy->getType() << " " << this->_weapon->getName() << std::endl;
         this->_weapon->attack();
         this->_ap -= this->_weapon->getapCost();
-        enemy->takeDamage(this->_weapon->getDamage());
+        std::cout << "IL RESTE " << this->_ap << std::endl;
+        enemy->takeDamage(this ->_weapon->getDamage());
         if (enemy->getHp() <= 0)
             delete enemy;
     }
+    else
+        std::cout << "Can't attack the enemy..." << std::endl;
 }
 
 std::string Character::getName(void) const
@@ -64,7 +68,7 @@ AWeapon * Character::getWeapon(void) const
 
 std::ostream& operator<<(std::ostream &os, Character const& character)
 {
-    os << character.getName() << " has " << character.getAp();
+    os << character.getName() << " has " << character.getAp() << " AP";
     if (character.getWeapon() != NULL)
         os << " and carries a " << character.getWeapon()->getName() << std::endl;
     else
