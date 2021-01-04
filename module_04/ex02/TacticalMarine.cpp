@@ -23,8 +23,7 @@ TacticalMarine & TacticalMarine::operator=(TacticalMarine const& src)
 
 ISpaceMarine* TacticalMarine::clone(void) const
 {
-    TacticalMarine* copy = new TacticalMarine(*this);
-
+    TacticalMarine* copy = new TacticalMarine;
     return copy;
 }
 

@@ -3,7 +3,6 @@
 
 #include "ISpaceMarine.hpp"
 #include <iostream>
-#include <string>
 
 class TacticalMarine : public ISpaceMarine {
 
