@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cctype>
 #include "PhoneBook.hpp"
 
 PhoneBook   newContact()
@@ -62,6 +63,16 @@ void    print_contacts(PhoneBook const contacts[8], int const size)
     }
 }
 
+int checkUserInput(std::string userInput)
+{
+    for (int i(0); userInput.size(); i++)
+    {
+        if (!isdigit(userInput[i]))
+            return 1;
+    }
+    return 0;
+}
+
 int     main(void)
 {
     bool            exit(false);
@@ -89,13 +100,19 @@ int     main(void)
         else if (command == "SEARCH")
         {
             print_contacts(phonebook, lastContact);
+            std::string userInput;
             std::cout << "Type the index of the contact you want to show: ";
-            std::cin >> index;
-            std::cin.ignore();
-            if (index <= lastContact)
-                phonebook[index].printAttributes();
-            else
-                std::cout << "Bad index... no contact founded" << std::endl;
+            std::cin >> userInput;
+            if (checkUserInput(userInput) == 1)
+                std::cout << "Bad user input" << std::endl;
+            else {
+                index = atoi(userInput.c_str());
+                std::cin.ignore();
+                if (index <= lastContact)
+                    phonebook[index].printAttributes();
+                else
+                    std::cout << "Bad index... no contact founded" << std::endl;
+            }
         }
         else if (command == "EXIT")
             exit = true;
