@@ -2,16 +2,25 @@
 #define SQUAD
 
 #include "ISquad.hpp"
+#include "ISpaceMarine.hpp"
+#include <iostream>
+#include <string>
 
-class Squad : public ISQUAD {
+class Squad : public ISquad {
 
     public:
 
     Squad(void);
+    Squad(Squad const& src);
+    Squad & operator=(Squad const& src);
     ~Squad(void);
-    int getCount();
-    ISpaceMarine* getUnit(int units);
-    int push(ISpace Marine*);
+    int getCount() const;
+    ISpaceMarine* getUnit(int units) const;
+    int push(ISpaceMarine* newMarine);
+
+    protected:
+
+    ISpaceMarine** _squad;
 };
 
 
