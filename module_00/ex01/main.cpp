@@ -65,7 +65,7 @@ void    print_contacts(PhoneBook const contacts[8], int const size)
 
 int checkUserInput(std::string userInput)
 {
-    for (int i(0); userInput.size(); i++)
+    for (int i(0); userInput.size() - 1; i++)
     {
         if (!isdigit(userInput[i]))
             return 1;
@@ -89,7 +89,7 @@ int     main(void)
         if (command == "ADD")
         {
             if (lastContact >= 8)
-                std::cout << "Your phonebook is full can't add a new contact.";
+                std::cout << "Your phonebook is full can't add a new contact." << std::endl;
             else
             {
                 std::cout << "Enter the new contact info : " << std::endl;
@@ -108,7 +108,7 @@ int     main(void)
             else {
                 index = atoi(userInput.c_str());
                 std::cin.ignore();
-                if (index <= lastContact)
+                if (index <= lastContact && index <= 7)
                     phonebook[index].printAttributes();
                 else
                     std::cout << "Bad index... no contact founded" << std::endl;
