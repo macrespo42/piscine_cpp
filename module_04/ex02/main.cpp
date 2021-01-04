@@ -1,9 +1,10 @@
 #include "ISpaceMarine.hpp"
 #include "TacticalMarine.hpp"
+#include "AssaultTerminator.hpp"
 
 int main(void) {
 
-    ISpaceMarine * bob = new TacticalMarine;
+    ISpaceMarine * bob = new AssaultTerminator;
 
     bob->battleCry();
     bob->rangedAttack();
