@@ -25,4 +25,5 @@ unsigned int AMateria::getXP(void) const {
 void AMateria::use(ICharacter& target) {
     std::string name("Random"); // TMP
     std::cout << name << " use unknown materia -__-" << std::endl;
+    this->_xp += 10;
 }
