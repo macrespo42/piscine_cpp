@@ -29,7 +29,16 @@ int     main(int ac, char **av) {
         std::stringstream fileName;
         fileName << av[1];
         fileName << ".replace";
-        std::ofstream replacedFile(fileName.str().c_str());
+        std::ifstream exist(av[1]);
+        std::ofstream replacedFile;
+        if (exist) {
+            std::ofstream replacedFile(fileName.str().c_str());
+            exist.close();
+        }
+        else {
+            std::cout << "The file " << av[1] << " doesn't exist" << std::endl;
+            return 1;
+        }
         if (replacedFile) {
             std::ifstream originalFile(av[1]);
             if (originalFile) {

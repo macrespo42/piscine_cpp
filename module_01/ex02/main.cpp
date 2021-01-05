@@ -12,6 +12,8 @@ int     main(void)
     covid19.setZombieType("Squealer");
     Zombie  random1(covid19.randomChump());
     Zombie  random2(covid19.randomChump());
+    Zombie  random3(covid19.randomChump());
+    Zombie  random4(covid19.randomChump());
     Zombie* elisa(covid19.newZombie("Elisa"));
     delete elisa;
     return 0;
