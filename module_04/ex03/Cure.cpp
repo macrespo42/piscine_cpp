@@ -8,7 +8,7 @@ Cure::Cure(Cure const& src) : AMateria("cure") {
 
 Cure::~Cure(void) {}
 
-Cure * Cure::operator=(Cure const& src) {
+Cure & Cure::operator=(Cure const& src) {
     this->_xp = src._xp;
     return *this;
 }

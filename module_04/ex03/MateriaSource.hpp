@@ -13,7 +13,7 @@ class MateriaSource : public IMateriaSource {
         AMateria* createMateria(std::string const& type);
 
     protected:
-        AMateria *materiaLearned[4];
+        AMateria *_materiaLearned[4];
 };
 
 #endif

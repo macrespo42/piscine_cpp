@@ -9,7 +9,7 @@ class Cure : public AMateria {
         Cure(void);
         Cure(Cure const& src);
         ~Cure(void);
-        Cure * operator=(Cure const& src);
+        Cure & operator=(Cure const& src);
         AMateria* clone(void) const;
         void use(ICharacter& target);
 };
