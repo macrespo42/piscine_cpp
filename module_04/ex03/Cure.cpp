@@ -2,7 +2,7 @@
 
 Cure::Cure(void) : AMateria("cure") {}
 
-Cure::Cure(Cure const& src) {
+Cure::Cure(Cure const& src) : AMateria("cure") {
     *this = src;
 }
 
@@ -13,13 +13,13 @@ Cure * Cure::operator=(Cure const& src) {
     return *this;
 }
 
-AMateria* clone(void) const {
+AMateria* Cure::clone(void) const {
     AMateria* cureClone = new Cure;
     return cureClone;
 }
 
-void use(ICharacter& target) {
+void Cure::use(ICharacter& target) {
     (void)target;
-    std::cout << "* heals " << name << "'s wounds" << std::endl;
+    std::cout << "* heals " << target.getName() << "'s wounds" << std::endl;
     this->_xp += 10;
 }

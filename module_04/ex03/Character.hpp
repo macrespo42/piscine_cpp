@@ -6,7 +6,7 @@
 class Character : public ICharacter {
     public:
         Character(void);
-        Character(std::string name)
+        Character(std::string name);
         Character(Character const& src);
         ~Character(void);
         Character & operator=(Character const& src);
@@ -16,7 +16,7 @@ class Character : public ICharacter {
         void use(int idx, ICharacter & target);
 
     protected:
-        AMateria *inventory[4];
+        AMateria *_inventory[4];
         std::string _name;
 
 };
