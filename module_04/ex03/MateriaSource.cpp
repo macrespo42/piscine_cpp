@@ -33,7 +33,7 @@ void MateriaSource::learnMateria(AMateria* materia) {
     this->_materiaLearned[freeSlot] = materia->clone();
 }
 
-AMateria* AMateria::createMateria(std::string const& type) {
+AMateria* MateriaSource::createMateria(std::string const& type) {
     int materiaMatch(false);
     int matchIndex(0);
     AMateria *materia;
