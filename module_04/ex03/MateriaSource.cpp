@@ -34,7 +34,6 @@ void MateriaSource::learnMateria(AMateria* materia) {
 }
 
 AMateria* MateriaSource::createMateria(std::string const& type) {
-    int materiaMatch(false);
     int matchIndex(0);
     AMateria *materia;
 
