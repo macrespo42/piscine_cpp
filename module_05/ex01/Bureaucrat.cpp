@@ -28,7 +28,6 @@ Bureaucrat::Bureaucrat(Bureaucrat const& src) {
 Bureaucrat::~Bureaucrat(void) {}
 
 Bureaucrat & Bureaucrat::operator=(Bureaucrat const& src) {
-    // this->_name = src._name;
     this->_grade = src._grade;
     return *this;
 }
@@ -54,4 +53,11 @@ void Bureaucrat::decGrade(void) {
 std::ostream & operator<<(std::ostream &os, Bureaucrat const& bureaucrat) {
     os << "<" << bureaucrat.getName() << ">, bureaucrat grade <" << bureaucrat.getGrade() << ">" << std::endl;
     return os;
+}
+
+void Bureaucrat::signForm(int formGrade, std::string const& formName) const {
+    if (formGrade >= this->_grade)
+        std::cout << "<" << this->_name << "> signs <" << formName <<">" << std::endl;
+    else
+        std::cout << "<" << this->_name << "> can't signs <" << formName <<">" << "because it got to high grade for him" << std::endl;
 }

@@ -28,10 +28,10 @@ class Form {
         ~Form(void);
         Form & operator=(Form const& src);
         void beSigned(Bureaucrat const& signer);
-        std::string const getName(void) const;
+        std::string getName(void) const;
         bool getSigned(void) const;
-        int const getSignedGrade(void) const;
-        int const getExecGrade(void) const;
+        int getSignedGrade(void) const;
+        int getExecGrade(void) const;
 
     private:
         std::string const _name;

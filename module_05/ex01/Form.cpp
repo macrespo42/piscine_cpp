@@ -1,6 +1,6 @@
 #include "Form.hpp"
 
-Form::Form(std::string const& name, int signedGrade, int execGrade) : _name(name), _signedGrade(signedGrade), _execGrade(execGrade), _signed(false) {
+Form::Form(std::string const& name, int signedGrade, int execGrade) : _name(name), _signed(false), _signedGrade(signedGrade), _execGrade(execGrade) {
     try {
         if (this->_signedGrade > 150 || this->_execGrade > 150)
             throw Form::GradeTooLowException();
@@ -12,7 +12,7 @@ Form::Form(std::string const& name, int signedGrade, int execGrade) : _name(name
     }
 } 
 
-Form::Form(Form const& src) : _name(src.getName()), _signedGrade(src.getSignedGrade()), _execGrade(src.getExecGrade()), _signed(src.getSigned())
+Form::Form(Form const& src) : _name(src.getName()), _signed(src.getSigned()), _signedGrade(src.getSignedGrade()), _execGrade(src.getExecGrade())
 {
     try {
         if (this->_signedGrade > 150 || this->_execGrade > 150)
@@ -32,7 +32,7 @@ Form & Form::operator=(Form const& src) {
     return *this;
 }
 
-std::string const Form::getName(void) const {
+std::string Form::getName(void) const {
     return this->_name;
 }
 
@@ -40,16 +40,17 @@ bool Form::getSigned(void) const {
     return this->_signed;
 }
 
-int const Form::getSignedGrade(void) const {
+int Form::getSignedGrade(void) const {
     return this->_signedGrade;
 }
 
-int const Form::getExecGrade(void) const {
+int Form::getExecGrade(void) const {
     return this->_execGrade;
 }
 
 void Form::beSigned(Bureaucrat const& signer) {
     try {
+        signer.signForm(this->_signedGrade, this->_name);
         if (signer.getGrade() <= this->_signedGrade)
             this->_signed = true;
         else 

@@ -34,6 +34,7 @@ class Bureaucrat {
         int getGrade(void) const;
         void incGrade(void);
         void decGrade(void);
+        void signForm(int formGrade, std::string const& formName) const;
 
     private:
         std::string const _name;
