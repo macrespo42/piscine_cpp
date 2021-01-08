@@ -9,6 +9,22 @@ class Bureaucrat {
 
     public:
 
+        class GradeTooHighException : public std::exception {
+            public:
+                virtual const char* what() const throw()
+                {
+                    return "Error <grade is to high>";
+                }
+        };
+
+        class GradeTooLowException : public std::exception {
+            public:
+                virtual const char* what() const throw()
+                {
+                    return "Error <grade is to low>";
+                }
+        };
+
         Bureaucrat(void);
         Bureaucrat(std::string name, int grade);
         Bureaucrat(Bureaucrat const& src);

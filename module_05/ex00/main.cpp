@@ -1,7 +1,8 @@
 #include "Bureaucrat.hpp"
 
 int main(void) {
-    Bureaucrat adam("Adam", 123);
+    Bureaucrat adam("Adam", 10);
+    Bureaucrat roro("Robert", 167);
 
     std::cout << adam;
     adam.incGrade();
