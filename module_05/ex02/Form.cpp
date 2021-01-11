@@ -69,3 +69,17 @@ std::ostream & operator<<(std::ostream & os, Form const& src)
     os << "Bureaucrat grade required for execute : " << src.getExecGrade() << std::endl;
     return os;
 }
+
+bool Form::execute(Bureaucrat const& executor) const {
+    try {
+        if (this->_signed == false)
+            throw Form::FormNotSigned();
+        else if (this->_execGrade < executor.getGrade())
+            throw Form::GradeTooLowException();
+        return true;
+    }
+    catch(std::exception& e) {
+        std::cout << e.what() << std::endl;
+        return false;
+    }
+}
