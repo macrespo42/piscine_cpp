@@ -9,6 +9,8 @@ class RobotomyRequestForm : public Form {
         RobotomyRequestForm(RobotomyRequestForm const& src);
         ~RobotomyRequestForm(void);
         RobotomyRequestForm & operator=(RobotomyRequestForm const& src);
+        bool execute(Bureaucrat const& executor) const;
+        void action(void) const;
 
     private:
         RobotomyRequestForm(void);

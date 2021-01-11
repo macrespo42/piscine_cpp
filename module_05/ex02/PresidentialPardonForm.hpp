@@ -10,6 +10,8 @@ class PresidentialPardonForm : public Form {
         PresidentialPardonForm(PresidentialPardonForm const& src);
         ~PresidentialPardonForm(void);
         PresidentialPardonForm & operator=(PresidentialPardonForm const& src);
+        bool execute(Bureaucrat const& executor) const;
+        void action(void) const;
 
     private:
         PresidentialPardonForm(void);
