@@ -28,19 +28,16 @@ Form* Intern::makeShrubberyCreationForm(std::string const& target) {
     return shrubberyForm;
 }
 
-
-Form* Intern::makeForm(std::string const& formType, std::string const& target) const {
-    typedef Form* (Intern::*functionPtr)(std::string const&);
-    functionPtr magic[3] = {&Intern::makeShrubberyCreationForm, &Intern::makeRobotmyRequestForm, &Intern::makePresidentialPardonForm};
+Form* Intern::makeForm(std::string const& formType, std::string const& target) {
+    functionPtr formPtrs[3] = {&Intern::makeShrubberyCreationForm, &Intern::makeRobotmyRequestForm, &Intern::makePresidentialPardonForm};
     std::string formNames[3] = {"Shruberry form" , "Robotmy request form" ,"Presidential pardon form"};
-    Form* newForm = NULL;
 
     for (int i(0); i < 3; i++) {
-        if (formNames[i] == formType) {
-            newForm = this->*magic[i](target);
+        if (formNames[i] == formType) { 
+            Form *newForm = (this->*formPtrs[i])(target);
             return newForm;
         }
     }
     std::cerr << "Error <Inter ty create a form who doesn't exist>" << std::endl;
-    return newForm;
+    return NULL;
 }
