@@ -10,8 +10,11 @@ class Convert {
         Convert(Convert const& src);
         ~Convert(void);
         Convert & operator=(Convert const& src);
+        void printToDouble(void) const;
+        void printToFloat(void) const;
+        void printToInt(void) const;
+        void printToChar(void) const;
 
-        
     private:
         Convert(void);
         double _str;
