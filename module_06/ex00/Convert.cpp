@@ -24,20 +24,39 @@ Convert & Convert::operator=(Convert const& src) {
 }
 
 void Convert::printToDouble(void) const {
-    std::cout << "double: " << this->_str << std::endl;
+    if (this->_str == static_cast<int>(this->_str))
+        std::cout << "double: " << this->_str << ".0" << std::endl;
+    else
+        std::cout << "double: " << this->_str << std::endl;
 }
 
 void Convert::printToFloat(void) const {
     float tmp = static_cast<float>(this->_str);
-    std::cout << "float: " << tmp << "f" << std::endl;
+    if (tmp == static_cast<int>(this->_str))
+        std::cout << "float: " << tmp << ".0f" << std::endl;
+    else
+        std::cout << "float: " << tmp << "f" << std::endl;
 }
 
 void Convert::printToInt(void) const {
-    int tmp = static_cast<int>(this->_str);
-    std::cout << "int: " << tmp << std::endl;
+    if (!std::isfinite(this->_str)) {
+        std::cout << "int: impossible" << std::endl;
+    }
+    else {
+        int tmp = static_cast<int>(this->_str);
+        std::cout << "int: " << tmp << std::endl;
+    }
 }
 
 void Convert::printToChar(void) const {
     char tmp = static_cast<char>(this->_str);
-    std::cout << "char: " << tmp << std::endl;
+    if (!std::isfinite(this->_str)) {
+        std::cout << "int: impossible" << std::endl;
+    }
+    else if ((tmp >= 0 && tmp <= 32) || (tmp < 0 || tmp > 126)){
+        std::cout << "char: Non displayable" << std::endl;
+    }
+    else {
+        std::cout << "char: " << tmp << std::endl;
+    }
 }
