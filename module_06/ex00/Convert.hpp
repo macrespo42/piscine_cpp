@@ -19,6 +19,7 @@ class Convert {
     private:
         Convert(void);
         double _str;
+        bool _validArg;
 };
 
 #endif
