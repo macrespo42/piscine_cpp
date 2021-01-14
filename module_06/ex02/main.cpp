@@ -21,18 +21,15 @@ void identify_from_reference( Base & p) {
 
 int main(void) {
     
-    Base * hardcore0 = new A;
-    Base * hardcore1 = new B;
-    Base * hardcore2 = new C;
-    Base ref1 = A();
-    Base ref2 = B();
-    Base ref3 = C();
+    Base * test0 = new A;
+    Base * test1 = new B;
+    Base * test2 = new C;
 
-    identify_from_pointer(hardcore0);
-    identify_from_pointer(hardcore1);
-    identify_from_pointer(hardcore2);
-    identify_from_reference(ref1);
-    identify_from_reference(ref2);
-    identify_from_reference(ref3);
+    identify_from_pointer(test0);
+    identify_from_pointer(test1);
+    identify_from_pointer(test2);
+    identify_from_reference(*test0);
+    identify_from_reference(*test1);
+    identify_from_reference(*test2);
     return 0;
 }
