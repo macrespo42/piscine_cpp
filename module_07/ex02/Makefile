@@ -4,7 +4,7 @@ CC = clang++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-FILES = main Array
+FILES = main
 
 SRC = $(addsuffix .cpp, $(addprefix ./, $(FILES)))
 
