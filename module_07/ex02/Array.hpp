@@ -20,29 +20,40 @@ class Array {
             delete tmp;
         }
 
+        Array<T> & operator=(Array const& src) {
+            this->_array = new T[src._size];
+            this->_size = src._size;
+            for (unsigned int i(0); i < this->_size; i++)
+                this->_array[i] = src._array[i];
+            return *this;
+        }
+
         Array(Array const& src) {
-            *this = src;
+            this->_array = new T[src._size];
+            this->_size = src._size;
+            for (unsigned int i(0); i < this->_size; i++)
+                this->_array[i] = src._array[i];
         }
 
         ~Array(void) {
             delete [] this->_array;
         }
 
-        Array<T> & operator=(Array const& src) {
-            this->_array = src._array;
-            this->_size = src._size;
-            for (unsigned int i(0); i < this->_size; i++)
-                this->_array[i] = src._array[i];
-        }
 
         unsigned int size(void) const {
             return this->_size;
         }
 
         T& operator[](int index) {
-            if (index < 0 || index > this->_size)
-                throw std::out_of_range ("Index out of range"); 
-            return this->_array[index];
+            try {
+                if (index < 0 || index > static_cast<int>(this->_size))
+                throw std::out_of_range (" Index out of range"); 
+                return this->_array[index];
+            }
+            catch (std::exception& e) {
+                std::cerr << e.what() << std::endl;
+            }
+            return this->_array[0];
         }
 
     private:
