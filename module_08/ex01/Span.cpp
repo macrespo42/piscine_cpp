@@ -40,7 +40,13 @@ int Span::shortestSpan(void) const {
             minSpan = cpy.at(i + 1) - cpy.at(i);
     }
     return minSpan;
-    // [42, 13, 11]
-    // [11, 13, 42]
+}
 
+void Span::fill(void) {
+    for (std::size_t i = 0; i < this->_size_max; i++) {
+        this->_values.push_back(i);
+    }
+    // for (std::size_t i = 0; i < this->_size_max; i++) {
+    //     std::cout << this->_values.at(i) << std::endl;
+    // }
 }

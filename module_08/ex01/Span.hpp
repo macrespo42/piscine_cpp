@@ -16,6 +16,7 @@ class Span {
         void addNumber(int nb);
         int longestSpan(void) const;
         int shortestSpan(void) const;
+        void fill(void);
 
     private:
         Span(void);
