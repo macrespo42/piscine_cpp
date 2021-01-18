@@ -1,22 +1,27 @@
 #include "Span.hpp"
 
 int main(void) {
-    Span span = Span(3);
+    Span span = Span(4);
 
     try {
-        span.addNumber(42);
+        span.addNumber(21);
+        span.addNumber(15);
         span.addNumber(11);
+        span.addNumber(21);
     }
     catch (std::exception const& e) {
         std::cout << e.what() << std::endl;
+        return 1;
     }
 
     try {
-        std::cout << span.longestSpan() << std::endl;
+        std::cout << "Longest span: " << span.longestSpan() << std::endl;
+        std::cout << "Shortest span: " << span.shortestSpan() << std::endl;
     }
 
     catch (std::exception const& e) {
         std::cout << e.what() << std::endl;
+        return 1;
     }
     return 0;
 }

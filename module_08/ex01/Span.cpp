@@ -22,16 +22,25 @@ void Span::addNumber(int nb) {
 }
 
 int Span::longestSpan(void) const {
-    if (this->_values.size() <= 1) {
+    if (this->_values.size() <= 1)
         throw std::length_error("No enough values to get span");
-    }
-    int max = 0;
-    int min = this->_values.front();
-    for (std::size_t i = 0; i < this->_values.size(); i++) {
-        if (this->_values[i] > max)
-            max = this->_values[i];
-        if (this->_values[i] < min)
-            min = this->_values[i];
-    }
+    int max = *std::max_element(this->_values.begin(), this->_values.end());
+    int min = *std::min_element(this->_values.begin(), this->_values.end());
     return max - min;
+}
+
+int Span::shortestSpan(void) const {
+    if (this->_values.size() <= 1)
+        throw std::length_error("No enough values to get span");
+    std::vector<int> cpy = this->_values;
+    std::sort(cpy.begin(), cpy.end());
+    int minSpan = cpy.at(1) - cpy.front();
+    for (std::size_t i = 0; i < cpy.size() - 1; i++) {
+        if ((cpy.at(i + 1) - cpy.at(i) < minSpan))
+            minSpan = cpy.at(i + 1) - cpy.at(i);
+    }
+    return minSpan;
+    // [42, 13, 11]
+    // [11, 13, 42]
+
 }
