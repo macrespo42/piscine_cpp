@@ -43,6 +43,8 @@ int Span::shortestSpan(void) const {
 }
 
 void Span::fill(void) {
+    if (this->_size_max <= 0)
+        throw std::length_error("No enough space in Object to fill");
     for (std::size_t i = 0; i < this->_size_max; i++) {
         this->_values.push_back(i);
     }
