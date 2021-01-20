@@ -5,5 +5,6 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+#include <string.h>
 
 #endif
