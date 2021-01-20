@@ -27,8 +27,18 @@ int     count_line(char *fileName) {
     return (numbersOfLines);
 }
 
+int empty_occ(char *s1, char *s2) {
+    if (strlen(s1) == 0 || strlen(s2) == 0)
+        return 0;
+    return 1;
+}
+
 int     main(int ac, char **av) {
     if (ac == 4) {
+        if (empty_occ(av[2], av[3]) == 0) {
+            std::cerr << "Error empty occurences" << std::endl;
+            return 1;
+        }
         std::ifstream originalFile(av[1]);
         if (originalFile) {
             std::stringstream fileName;
@@ -49,16 +59,16 @@ int     main(int ac, char **av) {
                 }
             }
             else {
-                std::cout << "Error when trying to create " << fileName.str() << std::endl;
+                std::cerr << "Error when trying to create " << fileName.str() << std::endl;
                 return 1;
             }
         }
         else {
-            std::cout << "Error when trying to open" << av[1] << std::endl;
+            std::cerr << "Error when trying to open " << av[1] << std::endl;
             return 1;
         }
     } else {
-        std::cout << "Bad arguments" << std::endl;
+        std::cerr << "Bad arguments" << std::endl;
     }
     return 0;
 }
