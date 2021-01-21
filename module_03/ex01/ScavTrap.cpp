@@ -45,7 +45,7 @@ void ScavTrap::meleeAttack(std::string const& target) {
 }
 
 void ScavTrap::takeDamage(unsigned int amount) {
-    if (amount > this->_armorDamageReduction) {
+    if (static_cast<int>(amount) > this->_armorDamageReduction) {
         this->_hitPoints -= (amount - this->_armorDamageReduction);
         if (this->_hitPoints <= 0) {
             this->_hitPoints = 0;
@@ -66,7 +66,7 @@ void ScavTrap::beRepaired(unsigned int amount) {
 }
 
 void ScavTrap::challengeNewcomer(std::string const& target) {
-    std::string const challenges[5] = {"Ce battre contre le covid", "Faire sourrir norminet", "Manger sain pendant 1 semaine", "Appeler son coiffeur", "Ouvrire une porte"};
+    std::string const challenges[5] = {"Ce battre contre le covid", "Faire sourire norminet", "Manger sain pendant 1 semaine", "Appeler son coiffeur", "Ouvrire une porte"};
 
     if (this->_energyPoints < 25) {
         std::cout << this->_name << " n'a pas assez d'energie pour effectuer une challenge" << std::endl;
@@ -74,5 +74,5 @@ void ScavTrap::challengeNewcomer(std::string const& target) {
     }
     this->_energyPoints -= 25;
 
-    std::cout << "SC4V-TP " << this->_name << "doit : " << challenges[rand() % 5] << std::endl;
+    std::cout << "SC4V-TP " << this->_name << "challenge : " << target << " de " << challenges[rand() % 5] << std::endl;
 }

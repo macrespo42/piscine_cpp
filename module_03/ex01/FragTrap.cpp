@@ -45,7 +45,7 @@ void FragTrap::meleeAttack(std::string const& target) {
 }
 
 void FragTrap::takeDamage(unsigned int amount) {
-    if (amount > this->_armorDamageReduction) {
+    if (static_cast<int>(amount) > this->_armorDamageReduction) {
         this->_hitPoints -= (amount - this->_armorDamageReduction);
         if (this->_hitPoints <= 0) {
             this->_hitPoints = 0;
