@@ -1,11 +1,11 @@
 #include "SuperTrap.hpp"
 
-SuperTrap::SuperTrap(void) : ClapTrap(100, 100, 120, 120, 1, "S4P3R-TP", 60, 20, 5), FragTrap(), NinjaTrap()
+SuperTrap::SuperTrap(void) : ClapTrap(100, 100, 120, 120, 1, "S4P3R-TP", 60, 20, 5)
 {
     std::cout << "SUPER TRAP CREATED" << std::endl;
 }
 
-SuperTrap::SuperTrap(std::string name) : ClapTrap(100, 100, 120, 120, 1, name, 60, 20, 5), FragTrap(name), NinjaTrap(name)
+SuperTrap::SuperTrap(std::string name) : ClapTrap(100, 100, 120, 120, 1, name, 60, 20, 5)
 {
     std::cout << "SUPER TRAP CREATED" << std::endl;
 }
