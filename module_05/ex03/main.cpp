@@ -6,25 +6,35 @@
 #include "Intern.hpp"
 
 int main(void) {
-    Bureaucrat adam("Adam", 130);
     Bureaucrat boss("Boss", 1);
     Intern someRandomIntern;
 
-    std::cout << adam;
     Form * houseTree = someRandomIntern.makeForm("Shruberry form", "House");
-    houseTree->beSigned(adam);
-    houseTree->execute(adam);
-
     Form * cesar = someRandomIntern.makeForm("Presidential pardon form" ,"Cesar");
-
-    cesar->beSigned(boss);
-    cesar->execute(boss);
-
     Form * leo = someRandomIntern.makeForm("Robotmy request form" ,"Leo");
+    try {
+        std::cout << "Sign form with the boss (he is grade 1)" << std::endl;
+        std::cout << boss;
 
-    leo->beSigned(boss);
-    leo->execute(boss);
+        houseTree->beSigned(boss);
+        houseTree->execute(boss);
 
+        cesar->beSigned(boss);
+        cesar->execute(boss);
+
+        leo->beSigned(boss);
+        leo->execute(boss);
+    }
+    catch (std::exception& e) {
+        std::cout << e.what() << std::endl;
+    }
+
+    Form * error = someRandomIntern.makeForm("Dominate the world" ,"Gilbert");
+
+    delete error;
     delete houseTree;
+    delete cesar;
+    delete leo;
+    return 0;
     return 0;
 }

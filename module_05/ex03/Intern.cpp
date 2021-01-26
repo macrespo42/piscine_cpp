@@ -38,6 +38,6 @@ Form* Intern::makeForm(std::string const& formType, std::string const& target) {
             return newForm;
         }
     }
-    std::cerr << "Error <Inter ty create a form who doesn't exist>" << std::endl;
+    std::cerr << "Error <Intern try create a form who doesn't exist." << std::endl;
     return NULL;
 }
