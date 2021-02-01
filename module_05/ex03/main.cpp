@@ -12,18 +12,19 @@ int main(void) {
     Form * houseTree = someRandomIntern.makeForm("Shruberry form", "House");
     Form * cesar = someRandomIntern.makeForm("Presidential pardon form" ,"Cesar");
     Form * leo = someRandomIntern.makeForm("Robotmy request form" ,"Leo");
+    
     try {
         std::cout << "Sign form with the boss (he is grade 1)" << std::endl;
         std::cout << boss;
 
         houseTree->beSigned(boss);
-        houseTree->execute(boss);
+        boss.executeForm(*houseTree);
 
         cesar->beSigned(boss);
-        cesar->execute(boss);
+        boss.executeForm(*cesar);
 
         leo->beSigned(boss);
-        leo->execute(boss);
+        boss.executeForm(*leo);
     }
     catch (std::exception& e) {
         std::cout << e.what() << std::endl;
@@ -35,6 +36,5 @@ int main(void) {
     delete houseTree;
     delete cesar;
     delete leo;
-    return 0;
     return 0;
 }

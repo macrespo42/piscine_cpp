@@ -15,14 +15,6 @@ PresidentialPardonForm & PresidentialPardonForm::operator=(PresidentialPardonFor
     return *this;
 }
 
-bool PresidentialPardonForm::execute(Bureaucrat const& executor) const {
-    if (Form::execute(executor)) {
-        action();
-        return true;
-    }
-    return false;
-}
-
 void PresidentialPardonForm::action(void) const {
     std::cout << this->_target << " has been pardoned by Zafod Beeblebrox" << std::endl;
 }

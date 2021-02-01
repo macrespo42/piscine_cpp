@@ -15,14 +15,6 @@ ShrubberryCreationForm & ShrubberryCreationForm::operator=(ShrubberryCreationFor
     return *this;
 }
 
-bool ShrubberryCreationForm::execute(Bureaucrat const& executor) const {
-    if (Form::execute(executor) == true) {
-        action();
-        return true;
-    }
-    return false;
-}
-
 void ShrubberryCreationForm::action(void) const {
     std::stringstream fileName;
     fileName << this->_target;

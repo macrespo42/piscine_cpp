@@ -70,10 +70,11 @@ std::ostream & operator<<(std::ostream & os, Form const& src)
     return os;
 }
 
-bool Form::execute(Bureaucrat const& executor) const {
+void Form::execute(Bureaucrat const& executor) const {
     if (this->_signed == false)
         throw Form::FormNotSigned();
     else if (this->_execGrade < executor.getGrade())
         throw Form::GradeTooLowException();
-    return true;
+    else
+        this->action();
 }
