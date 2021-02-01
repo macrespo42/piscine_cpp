@@ -3,6 +3,7 @@
 
 #include <iostream>
 
+
 template< typename T >
 void swap(T & a, T & b) {
     T tmp(a);
@@ -11,13 +12,19 @@ void swap(T & a, T & b) {
 }
 
 template< typename T >
-T const& max(T const& a, T const& b) {
-    return a < b ? b : a;
+T max(T a, T b) {
+    if (a > b)
+        return a;
+    else
+        return b;
 }
 
 template< typename T >
-T const& min(T const& a, T const& b) {
-    return a < b ? a : b;
+T min(T a, T b) {
+    if (a > b)
+        return b;
+    else
+        return a;
 }
 
 #endif
