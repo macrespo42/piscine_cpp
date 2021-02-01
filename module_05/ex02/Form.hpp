@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string>
 
+class Bureaucrat;
 class Form {
 
     public:
@@ -40,7 +41,7 @@ class Form {
         bool getSigned(void) const;
         int getSignedGrade(void) const;
         int getExecGrade(void) const;
-        virtual bool execute(Bureaucrat const& executor) const;
+        virtual void execute(Bureaucrat const& executor) const;
         virtual void action(void) const = 0;
 
     private:

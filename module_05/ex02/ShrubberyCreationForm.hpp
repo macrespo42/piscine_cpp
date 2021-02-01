@@ -12,7 +12,6 @@ class ShrubberryCreationForm : public Form {
         ShrubberryCreationForm(ShrubberryCreationForm const& src);
         ~ShrubberryCreationForm(void);
         ShrubberryCreationForm & operator=(ShrubberryCreationForm const& src);
-        bool execute(Bureaucrat const& executor) const;
         void action(void) const;
 
 

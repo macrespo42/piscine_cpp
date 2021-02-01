@@ -54,14 +54,23 @@ void Bureaucrat::decGrade(void) {
         throw GradeTooLowException();
 }
 
-std::ostream & operator<<(std::ostream &os, Bureaucrat const& bureaucrat) {
-    os << "<" << bureaucrat.getName() << ">, bureaucrat grade <" << bureaucrat.getGrade() << ">" << std::endl;
-    return os;
-}
-
 void Bureaucrat::signForm(int formGrade, std::string const& formName) const {
     if (formGrade >= this->_grade)
         std::cout << "<" << this->_name << "> signs <" << formName <<">" << std::endl;
     else
         std::cout << "<" << this->_name << "> can't signs <" << formName <<">" << "because it got to high grade for him" << std::endl;
+}
+
+void Bureaucrat::executeForm(Form const& form) const {
+    try {
+        form.execute(*this);
+    }
+    catch (std::exception& e) {
+        std::cout << this->_name << " Can't execute form : " << e.what();
+    }
+}
+
+std::ostream & operator<<(std::ostream &os, Bureaucrat const& bureaucrat) {
+    os << "<" << bureaucrat.getName() << ">, bureaucrat grade <" << bureaucrat.getGrade() << ">" << std::endl;
+    return os;
 }

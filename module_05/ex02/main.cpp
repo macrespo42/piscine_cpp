@@ -17,13 +17,13 @@ int main(void) {
         std::cout << boss;
 
         houseTree->beSigned(boss);
-        houseTree->execute(boss);
+        boss.executeForm(*houseTree);
 
         cesar->beSigned(boss);
-        cesar->execute(boss);
+        boss.executeForm(*cesar);
 
         leo->beSigned(boss);
-        leo->execute(boss);
+        boss.executeForm(*leo);
     }
     catch (std::exception& e) {
         std::cout << e.what() << std::endl;
@@ -32,8 +32,8 @@ int main(void) {
     std::cout << "------------------------------------------------------------------" << std::endl;
     try {
         std::cout << "Sign form with Adam the noob (he is grade 130)" << std::endl;
-        std::cout << adam << std::endl;
-        cesar->execute(adam);
+        std::cout << adam;
+        adam.executeForm(*cesar);
     }
     catch (std::exception& e) {
         std::cout << e.what() << std::endl;
