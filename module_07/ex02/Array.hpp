@@ -45,15 +45,10 @@ class Array {
         }
 
         T& operator[](int index) {
-            try {
-                if (index < 0 || index > static_cast<int>(this->_size))
-                throw std::out_of_range (" Index out of range"); 
+                if (index < 0 || index > static_cast<int>(this->_size)) {
+                    throw std::out_of_range (" Index out of range\n");
+                }
                 return this->_array[index];
-            }
-            catch (std::exception& e) {
-                std::cerr << e.what() << std::endl;
-            }
-            return this->_array[0];
         }
 
     private:
