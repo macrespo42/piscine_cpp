@@ -2,7 +2,7 @@
 
 int main(int ac, char **av) {
     if (ac == 2) {
-        Convert nb(static_cast<std::string>(av[1]));
+        Convert nb(av[1]);
         nb.printToChar();
         nb.printToInt();
         nb.printToFloat();

@@ -2,12 +2,12 @@
 #define CONVERT
 
 #include <iostream>
-#include <string>
+#include <cstdlib>
 #include <cmath>
 
 class Convert {
     public:
-        Convert(std::string str);
+        Convert(char *str);
         Convert(Convert const& src);
         ~Convert(void);
         Convert & operator=(Convert const& src);

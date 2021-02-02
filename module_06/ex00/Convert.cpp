@@ -1,8 +1,8 @@
 #include "Convert.hpp"
 
-Convert::Convert(std::string str) {
+Convert::Convert(char *str) {
     try {
-        this->_str = std::stod(str);
+        this->_str = atof(str);
         this->_validArg = true;
     }
     catch (std::invalid_argument &) {
