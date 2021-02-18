@@ -49,3 +49,8 @@ In this module we learn Inheritance in CPP
 
 ---
 
+## Module 05
+
+This module is about Repetition and Exceptions
+
+---
