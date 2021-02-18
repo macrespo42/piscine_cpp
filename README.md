@@ -34,3 +34,10 @@ This module is about :
 3. Canonical classes
 
 ---
+
+## Module 03
+
+In this module we learn Inheritance in CPP
+
+---
+
