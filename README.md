@@ -60,3 +60,17 @@ This module is about Repetition and Exceptions
 In this module we learn the C++ Casts
 
 ---
+
+## Module 07
+
+We learn the famous C++ templates in this module
+
+---
+
+### Module 08
+
+Finally in this last module we discover :
+
+1. Templated containers
+2. Iterators
+3. Algorithms
