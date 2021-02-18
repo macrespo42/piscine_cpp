@@ -14,3 +14,14 @@ In this module we get the basics of cpp like :
 7. and more ...
 
 ---
+
+## Module 01
+
+In this module we learn :
+
+1. Memory allocation
+2. References / pointers
+3. File streams
+
+---
+
