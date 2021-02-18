@@ -54,3 +54,9 @@ In this module we learn Inheritance in CPP
 This module is about Repetition and Exceptions
 
 ---
+
+## Module 06
+
+In this module we learn the C++ Casts
+
+---
